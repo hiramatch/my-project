@@ -9,6 +9,11 @@ export default new Router({
   routes: [
     {
       path: '/',
+      name: 'Index',
+      component: Scene1
+    },
+    {
+      path: '/scene1',
       name: 'scene1',
       component: Scene1
     },
