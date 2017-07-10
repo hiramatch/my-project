@@ -12,12 +12,16 @@ import Vue from 'vue'
 import InputButton from './forms/InputButton'
 import NickNameHeader from './forms/Header'
 import InputText from './forms/InputText'
+import axios from 'axios'
 
 //  デフォルト値定義
 export default {
-  data () {
-    return {
-    }
+  created: function () {
+    axios.get('http://127.0.0.1:4321/profile_wait')
+      .then(response => {
+        console.log(response.data) // mockData
+        console.log(response.status) // 200
+      })
   }
 }
 
