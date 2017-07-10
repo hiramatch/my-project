@@ -9,7 +9,9 @@
 <script>
 //  インポートします。
 import Vue from 'vue'
-import {NickNameHeader, InputText, InputButton} from './forms/Headers.js'
+import InputButton from './forms/InputButton'
+import NickNameHeader from './forms/Header'
+import InputText from './forms/InputText'
 
 //  デフォルト値定義
 export default {
@@ -39,26 +41,6 @@ Vue.component('input-button', InputButton)
     margin: 0 auto;
     height:30pt;
   }
-}
-.nickname{
-  display: block;
-  height: 3rem;
-}
-.input{
-  width: 130pt;
-  height:30pt;
-}
-.button {
-  display: block;
-  position: relative;
-  margin: 0 auto;
-  width: 70pt;
-  background-color: white;
-  border: solid 1px silver;
-  border-radius: 0.5rem 0.5rem;
-  padding: 0.5rem 1.5rem;
-  margin-top: 1rem;
-  text-decoration: none;
 }
 
 </style>
