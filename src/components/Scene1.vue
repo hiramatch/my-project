@@ -13,6 +13,7 @@ import InputButton from './forms/InputButton'
 import NickNameHeader from './forms/Header'
 import InputText from './forms/InputText'
 import axios from 'axios'
+import PropertyStore from '../models/PropertyStore.js'
 
 //  デフォルト値定義
 export default {
@@ -22,6 +23,14 @@ export default {
         console.log(response.data) // mockData
         console.log(response.status) // 200
       })
+  },
+  validate: function (event) {
+    try {
+      this.$data.sharedState.dispatch('setUser')
+      this.$router.push('/scene2')
+    } catch (e) {
+      alert(e.message)
+    }
   }
 }
 
@@ -33,6 +42,12 @@ Vue.component('input-text', InputText)
 
 //  コンポーネントを登録
 Vue.component('input-button', InputButton)
+
+//  ユーザー情報取得
+PropertyStore.dispatch('getUser')
+//  コンポーネントを登録
+Vue.component('nickname-header', NickNameHeader)
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
